@@ -1,5 +1,9 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <el-row>
+      <el-col :span="24">
+        <el-button >222</el-button>
+      </el-col>
+    </el-row>
   </div>
 </template>
