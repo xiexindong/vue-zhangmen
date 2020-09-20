@@ -1,24 +1,15 @@
 /* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import About from '../views/About.vue'
+import Home from "../views/Home"
+// import About from '../views/About.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'About',
-    component: About
-}, {
-    path: '/Home',
     name: 'Home',
-    component: () =>
-    import ( /* webpackChunkName: "home" */ '../views/Home.vue')
-}, {
-    path: '/Admin',
-    name: 'Admin',
-    component: () =>
-    import ( /* webpackChunkName: "Admin" */ '../views/Admin.vue')
+    component: Home
 }]
 
 const router = new VueRouter({
@@ -28,3 +19,11 @@ const router = new VueRouter({
 })
 
 export default router
+
+
+// {
+//     path: '/Admin',
+//     name: 'Admin',
+//     component: () =>
+//     import ( /* webpackChunkName: "Admin" */ '../views/Admin.vue')
+// }

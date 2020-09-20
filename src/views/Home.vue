@@ -1,29 +1,22 @@
 <template>
   <div class="home">
-    <All :msg="msg"/>
+      {{msg}}
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import All from '@/components/all/all.vue'
 
 export default {
   name: 'Home',
   components: {
-    All
   },
   data () {
     return {
-      msg: ''
+      msg: 'lisi'
     }
   },
   methods: {
-    setTime () {
-      setTimeout(() => {
-        this.msg = 'lisi'
-      }, 4000)
-    }
   },
   beforeCreate () {
     console.log('beforeCreate')
