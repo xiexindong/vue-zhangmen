@@ -4,20 +4,33 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-    showFooter: true,
-    changableNum: 0
+    changeShowCom: true,
+    count: 1
 }
 
 const getters = {
+    getCount (state) {
+        return state.count
+    },
     isShow (state) {
-        return state.showFooter
+        return state.changeShowCom
     }
+}
+
+const actions = {
+    addCount (context, num) {
+
+    },
+    delCount (context, num) {
+
+    }
+
 }
 
 export default new Vuex.Store({
     state,
     getters,
     mutations: {},
-    actions: {},
+    actions,
     modules: {}
 })
