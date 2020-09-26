@@ -192,7 +192,7 @@ export default {
       
            myChart.setOption(option)
 
-            myChart.on('click', function (params) {
+           myChart.on('click', function (params) {
                 console.log(params)
               if(params.componentType == "xAxis"){
 
