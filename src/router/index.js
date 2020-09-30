@@ -2,7 +2,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
-import DetailCard  from '../views/DetailCard.vue'
+// import DetailCard  from '../views/DetailCard.vue'
+
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,13 @@ const routes = [{
 }, {
     path: '/DetailCard',
     name: 'DetailCard',
-    component: DetailCard
+    component: () =>
+        import ( /*webpackChunkName: "Admin"*/ '../views/DetailCard.vue')
+} , {
+    path: '/parement',
+    name: 'Parement',
+    component: () =>
+        import ( /*webpackChunkName: "parement"*/ '../views/customCom/parement.vue')
 }]
 
 const router = new VueRouter({
