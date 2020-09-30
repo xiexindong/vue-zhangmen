@@ -1,8 +1,8 @@
 /* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from "../views/Home"
-// import About from '../views/About.vue'
+import Home from '../views/Home'
+import DetailCard  from '../views/DetailCard.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +10,10 @@ const routes = [{
     path: '/',
     name: 'Home',
     component: Home
+}, {
+    path: '/DetailCard',
+    name: 'DetailCard',
+    component: DetailCard
 }]
 
 const router = new VueRouter({
