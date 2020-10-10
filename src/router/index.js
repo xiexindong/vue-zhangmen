@@ -21,12 +21,14 @@ const routes = [{
     name: 'Parement',
     component: () =>
         import ( /*webpackChunkName: "parement"*/ '../views/customCom/parement.vue')
-}, {
-    path: '/moment',
-    name: 'Moment',
-    component: () =>
-        import ( /*webpackChunkName: "Moment"*/ '../views/moment')
-}]
+},
+//  {
+//     path: '/moment',
+//     name: 'Moment',
+//     component: () =>
+//         import ( /*webpackChunkName: "Moment"*/ '../views/moment')
+// }
+]
 
 const router = new VueRouter({
     mode: 'history',

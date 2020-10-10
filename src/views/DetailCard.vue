@@ -69,7 +69,7 @@ export default {
 
           var timeArr  =  ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
           
-          
+          const legrendUnSelect ={}
           const option = {
             grid: {
               top: 50,
@@ -96,8 +96,9 @@ export default {
               orient: 'horizontal',
               bottom: 10,
                 type: 'scroll',
-                width:300,
-              data: ['工单量', '工单量2', '工单率', '工单率2' ]
+                width:100,
+              data: ['工单量', '工单量2', '工单率', '工单率2', '工单率3', '工单率4' ],
+              selected:legrendUnSelect
             },
             xAxis: [
               {
@@ -178,7 +179,17 @@ export default {
               },
              
                {
-                name: '工单率2',
+                name: '工单率3',
+                type: 'line',
+                smooth: true,
+                itemStyle: {
+                  color: 'red',
+                },
+                yAxisIndex: 0,
+                data: rateArr2,
+              },
+               {
+                name: '工单率4',
                 type: 'line',
                 smooth: true,
                 itemStyle: {
@@ -205,6 +216,32 @@ export default {
               }
 
           });
+
+         
+          myChart.on('legendScroll', function(params) {
+
+          let index = params.scrollDataIndex;
+          let len = option.series.length;
+          console.log("index",index)
+          console.log("len",len)
+          console.log("len",this.series)
+          
+          if((index + 1)%2 ==0){
+            this.scrollDataIndex = index + 1;
+            for(let i=0;i<len;i++){
+                this.legrendUnSelect[this.series[i].name] = (i > index && i - index <= 6) ? true : false;
+            }
+          }
+      　　//前翻页
+          if((index -1)%2 ==0){
+              this.scrollDataIndex = index - 1;
+              for(let i=0;i<len;i++){
+                  this.legrendUnSelect[this.series[i].name] = (i+2 > index && i+2 - index <= 6) ? true : false;
+              }
+          }
+
+
+        })
 
 
           //  myChart.on("click",function(param){
