@@ -22,12 +22,12 @@ const routes = [{
     component: () =>
         import ( /*webpackChunkName: "parement"*/ '../views/customCom/parement.vue')
 },
-//  {
-//     path: '/moment',
-//     name: 'Moment',
-//     component: () =>
-//         import ( /*webpackChunkName: "Moment"*/ '../views/moment')
-// }
+ {
+    path: '/picker',
+    name: 'picker',
+    component: () =>
+        import ( /*webpackChunkName: "Moment"*/ '../views/picker/DatePicker2')
+}
 ]
 
 const router = new VueRouter({
