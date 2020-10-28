@@ -27,7 +27,19 @@ const routes = [{
     name: 'picker',
     component: () =>
         import ( /*webpackChunkName: "Moment"*/ '../views/picker/DatePicker2')
-}
+},
+{
+    path: '/getter',
+    name: 'getter',
+    component: () =>
+        import ( /*webpackChunkName: "Moment"*/ '../views/testState/getters')
+},
+// {
+//     path: '/moment',
+//     name: 'moment',
+//     component: () =>
+//         import ( /*webpackChunkName: "Moment"*/ '../views/moment')
+// }
 ]
 
 const router = new VueRouter({
