@@ -1,4 +1,5 @@
 <template>
+<div>
   <el-calendar v-model="calendarValue" id="calendar">
       <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
       <template
@@ -21,10 +22,14 @@
           </div>
       </template>
 </el-calendar>
-
+<el-button @click="toggleClassType">测试按钮</el-button>
+{{ classType }}
+</div>
 </template>
 
 <script>
+    import { mapActions, mapGetters } from 'vuex'
+
     export default {
         name: 'calendar',
         data () {
@@ -35,8 +40,19 @@
                     { months: ['11'], days: ['02'], things: '看星星' }
                 ],
                 calendarValue: new Date()
+                // classType: () => {
+                //     return this.$store.classType
+                // }
             }
         },
+        computed: {
+          ...mapGetters(['classType'])
+        },
+
+        mounted () {
+            this.getSignallingSelectList()
+        },
+
         watch: {
             calendarValue: function (val) {
               console.log(val)
@@ -46,6 +62,15 @@
                  ]
               })
             }
+        },
+
+        methods: {
+            ...mapActions('dictionary', ['toggleClassTypeAction', 'getSignallingSelectList']),
+            toggleClassType () {
+                const classType = +this.classType === 2 ? 0 : 2
+                this.toggleClassTypeAction(classType)
+                localStorage.setItem('classType', classType)
+                }
         }
     }
 </script>

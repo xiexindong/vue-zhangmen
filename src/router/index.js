@@ -28,12 +28,7 @@ const routes = [{
     component: () =>
         import ( /*webpackChunkName: "Moment"*/ '../views/picker/DatePicker2')
 },
-{
-    path: '/getter',
-    name: 'getter',
-    component: () =>
-        import ( /*webpackChunkName: "Moment"*/ '../views/testState/getters')
-},
+
 // {
 //     path: '/moment',
 //     name: 'moment',
