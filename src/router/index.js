@@ -34,12 +34,12 @@ const routes = [{
     component: () =>
         import ( /*webpackChunkName: "Moment"*/ '../views/testState/getters')
 },
-// {
-//     path: '/moment',
-//     name: 'moment',
-//     component: () =>
-//         import ( /*webpackChunkName: "Moment"*/ '../views/moment')
-// }
+{
+    path: '/tempalte',
+    name: 'tempalte',
+    component: () =>
+        import ( /*webpackChunkName: "tempalte"*/ '../views/template')
+}
 ]
 
 const router = new VueRouter({
