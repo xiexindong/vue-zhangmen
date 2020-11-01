@@ -1,13 +1,31 @@
 <template>
     <div>战三
-        <template v-for="(item, index) in list" >
+        <!-- <template v-for="(item, index) in list" >
             <div :key="item.id">{{item.text}}--{{index}}</div>
                  <span :key="item.id"> {{item.text}}</span>
-        </template>
+        </template> -->
+        <com>
+            <template v-slot="scope">
+            {{scope.key}}
+            <button >删除</button>
+            </template>
+        </com>
+         <com>
+            <!-- <template v-slot="{key}"></template> -->
+        </com>
+
     </div>
 </template>
 
 <script>
+const com = {
+  template: `
+    <div>
+      其他内容
+      <slot key="value" key2="value2" key3="value3"></slot>
+    </div>
+  `
+}
 export default {
     data () {
         return {
@@ -24,6 +42,9 @@ export default {
                 text: 'How2'
             }]
         }
+    },
+    components: {
+        com
     }
 }
 </script>
