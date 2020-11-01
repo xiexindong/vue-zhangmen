@@ -11,34 +11,12 @@ const routes = [{
     path: '/',
     name: 'Home',
     component: Home
-}, {
-    path: '/DetailCard',
-    name: 'DetailCard',
-    component: () =>
-        import ( /*webpackChunkName: "Admin"*/ '../views/DetailCard.vue')
-} , {
-    path: '/parement',
-    name: 'Parement',
-    component: () =>
-        import ( /*webpackChunkName: "parement"*/ '../views/customCom/parement.vue')
-},
- {
-    path: '/picker',
-    name: 'picker',
-    component: () =>
-        import ( /*webpackChunkName: "Moment"*/ '../views/picker/DatePicker2')
 },
 {
-    path: '/getter',
-    name: 'getter',
+    path: '/compute',
+    name: 'compute',
     component: () =>
-        import ( /*webpackChunkName: "Moment"*/ '../views/testState/getters')
-},
-{
-    path: '/tempalte',
-    name: 'tempalte',
-    component: () =>
-        import ( /*webpackChunkName: "tempalte"*/ '../views/template')
+        import ( /*webpackChunkName: "bili"*/ '../views/bili/compute')
 }
 ]
 
