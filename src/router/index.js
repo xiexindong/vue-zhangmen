@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
+import Model from '../views/bili/v-model'
 // import DetailCard  from '../views/DetailCard.vue'
 
 
@@ -9,8 +9,8 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'model',
+    component: Model
 },
 {
     path: '/compute',

@@ -3,7 +3,18 @@
         <p>{{ name }}</p>
         <p>书的总价格: {{ totalPrice }} </p>
         <p>书的总价格: {{ fullName }} </p>
-        <button @click="setFullName">改变数值</button>
+        <button @click="setfirstName">改变数值</button>
+        <p>计算属性 无缓存: {{ setFullName() }}</p>
+        <p>计算属性 无缓存: {{ setFullName() }}</p>
+        <p>计算属性 无缓存: {{ setFullName() }}</p>
+        <p>计算属性 无缓存: {{ setFullName() }}</p>
+        <p>{{ otherName }}</p>
+        <p>以上执行 四次</p>
+        <p>计算属性 有缓存: {{ fullName }}</p>
+        <p>计算属性 有缓存: {{ fullName }}</p>
+        <p>计算属性 有缓存: {{ fullName }}</p>
+        <p>计算属性 有缓存: {{ fullName }}</p>
+        <p>以上执行 一次</p>
     </div>
 </template>
 
@@ -19,7 +30,8 @@ export default {
                 { id: 113, name: 'css', price: 140 }
             ],
             firstName: 'lisi',
-            lastName: 'zhangsan'
+            lastName: 'zhangsan',
+            otherName: ''
         }
     },
     computed: {
@@ -62,13 +74,17 @@ export default {
                 this.lastName = name[1]
             },
             get: function () {
+                console.log('执行一次')
                 return this.firstName + ' ' + this.lastName
             }
         }
     },
     methods: {
         setFullName: function () {
-            this.fullName = 'wangwu zhangsan2'
+            this.otherName = 'zjamgsa'
+        },
+        setfirstName: function () {
+               this.fullName = 'zhang s22ee'
         }
     }
 
