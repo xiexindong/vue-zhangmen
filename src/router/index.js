@@ -1,28 +1,39 @@
 /* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Model from '../views/bili/v-model'
-// import DetailCard  from '../views/DetailCard.vue'
+import Admin from '../views/admin'
 
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
+    name: 'admin',
+    component: Admin
+},{
+    path: '/model',
     name: 'model',
-    component: Model
+    component: () => import (/*webpackChunkName: "model"*/  '../views/bili/compute')
 },
 {
     path: '/compute',
     name: 'compute',
     component: () =>
         import ( /*webpackChunkName: "bili"*/ '../views/bili/compute')
+},
+{
+    path: '/rili',
+    name: 'rili',
+    component: () =>
+        import ( /*webpackChunkName: "bili"*/ '../views/Home')
 }
 ]
 
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
+    mode: 'hash',
+    scrollBehavior:()=>{
+        y:0
+    },
     routes
 })
 
