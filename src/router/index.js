@@ -13,7 +13,7 @@ const routes = [{
 },{
     path: '/model',
     name: 'model',
-    component: () => import (/*webpackChunkName: "model"*/  '../views/bili/compute')
+    component: () => import (/*webpackChunkName: "model"*/  '../views/bili/v-model')
 },
 {
     path: '/compute',

@@ -11,6 +11,7 @@
     </div>
 </template>
 <script>
+import ExtendCom from "./hello.js"
 export default {
     data () {
         return {
@@ -21,6 +22,7 @@ export default {
         inputchange: function (event) {
             console.log(event)
             this.message = event.target.value
+            ExtendCom('nihao')
         }
     }
 }
