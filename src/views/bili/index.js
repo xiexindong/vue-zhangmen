@@ -1,19 +1,15 @@
-import Vue from 'vue'
-import Component from './extend'
-
-const Constructor = Vue.extend(Component)
-
-console.log('constructor',Constructor)
-
-const uploadOSS = (creator) => {
-  const UploadCom = new Constructor({
-    el: document.createElement('div'),
-    data() {
-      return {
-        creator
-      }
+<template>
+  <div id="mount-point"></div>
+</template>
+var Profile = Vue.extend({
+  template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+  data: function () {
+    return {
+      firstName: 'Walter',
+      lastName: 'White',
+      alias: 'Heisenberg'
     }
-  })
-  document.body.appendChild(UploadCom.$el)
-}
-export default uploadOSS
+  }
+})
+// 创建 Profile 实例，并挂载到一个元素上。
+new Profile().$mount('#mount-point')
