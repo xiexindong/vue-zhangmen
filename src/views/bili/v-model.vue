@@ -4,14 +4,14 @@
         <!-- {{ message }} -->
         1---------------------------------------------------1<br/>
         <!-- :value  === v-bind:value -->
-        <!-- <input type= 'text' :value = 'message' v-on:input='inputchange'/> -->
-        <input type= 'text' :value = 'message' @input='message = $event.target.value'/>
+        <input type= 'text' :value = 'message' v-on:input='inputchange'/>
+        <!-- <input type= 'text' :value = 'message' @input='message = $event.target.value'/> -->
         {{ message }}
 
     </div>
 </template>
 <script>
-import ExtendCom from "./hello.js"
+import ExtendCom from "./modalAlert.js"
 export default {
     data () {
         return {
@@ -20,9 +20,15 @@ export default {
     },
     methods: {
         inputchange: function (event) {
-            console.log(event)
             this.message = event.target.value
-            ExtendCom('nihao')
+            this.$modalAlert({
+                title: '操作成功',
+                message: '撤单成功！',
+                type: 'warning',
+                callback() {
+                    console.log('test')
+                }
+            })
         }
     }
 }

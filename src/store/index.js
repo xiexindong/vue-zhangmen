@@ -14,7 +14,7 @@ const state = {
 
 const getters = {
     doneTodos: state => {
-        return state.todos.filter(todo => { console.log(todo.id) })
+        return state.todos.filter(todo => todo)
     },
     getCount (state) {
         return state.count
