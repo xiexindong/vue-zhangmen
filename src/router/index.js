@@ -2,10 +2,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import About from '../views/About.vue'
+import Render from '../views/render'
+
 
 Vue.use(VueRouter)
 
 const routes = [{
+    path: '/render',
+    name: 'render',
+    component: Render
+},{
     path: '/',
     name: 'About',
     component: About
